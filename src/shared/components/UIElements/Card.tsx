@@ -1,13 +1,13 @@
-import React, { ReactNode } from "react";
-import "./Card.css";
+import React, { ReactNode } from 'react';
+import './Card.css';
 
-interface ICardProps {
+type Props = {
   className?: string;
   children: ReactNode;
   style?: React.CSSProperties;
-}
+};
 
-export default function Card(props: ICardProps) {
+export default function Card(props: Props) {
   const { className, style, children } = props;
 
   return (
