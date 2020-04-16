@@ -1,21 +1,15 @@
-import React from "react";
+import React from 'react';
 
-import Card from "../../shared/components/UIElements/Card";
-import UserItem from "./UserItem";
-import "./UserList.css";
+import Card from '../../shared/components/UIElements/Card';
+import UserItem from './UserItem';
+import './UserList.css';
+import { User } from '../../types';
 
-interface IUserListProps {
-  items: IUser[];
-}
+type Props = {
+  items: User[];
+};
 
-interface IUser {
-  id: string;
-  name: string;
-  image: string;
-  recipeCount: number;
-}
-
-export default function UsersList(props: IUserListProps) {
+export default function UsersList(props: Props) {
   if (props.items.length <= 0) {
     return (
       <div className="center">
@@ -28,14 +22,8 @@ export default function UsersList(props: IUserListProps) {
 
   return (
     <ul className="users-list">
-      {props.items.map((user) => (
-        <UserItem
-          key={user.id}
-          id={user.id}
-          image={user.image}
-          name={user.name}
-          recipeCount={user.recipeCount}
-        />
+      {props.items.map(user => (
+        <UserItem key={user.id} id={user.id} imageUrl={user.imageUrl} name={user.name} recipeCount={user.recipeCount} />
       ))}
     </ul>
   );
