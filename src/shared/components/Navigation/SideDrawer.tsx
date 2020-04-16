@@ -4,12 +4,6 @@ import { CSSTransition } from 'react-transition-group';
 
 import './SideDrawer.css';
 
-type Props = {
-  children: ReactNode;
-  show: boolean;
-  onClick: () => void;
-};
-
 export default function SideDrawer(props: Props) {
   const { show, onClick, children } = props;
 
@@ -24,3 +18,9 @@ export default function SideDrawer(props: Props) {
 
   return ReactDOM.createPortal(drawer, drawerRoot);
 }
+
+type Props = {
+  children: ReactNode;
+  show: boolean;
+  onClick: () => void;
+};

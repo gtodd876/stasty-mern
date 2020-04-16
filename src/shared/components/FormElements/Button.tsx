@@ -3,19 +3,6 @@ import { Link } from 'react-router-dom';
 
 import './Button.css';
 
-type Props = {
-  href?: string;
-  size?: string;
-  inverse?: boolean;
-  danger?: boolean;
-  children: ReactNode;
-  to?: string;
-  exact?: boolean;
-  type: 'button' | 'submit' | 'reset' | undefined;
-  onClick?: () => void;
-  disabled?: boolean;
-};
-
 export default function Button(props: Props) {
   if (props.href) {
     return (
@@ -54,3 +41,16 @@ export default function Button(props: Props) {
     </button>
   );
 }
+
+type Props = {
+  href?: string;
+  size?: string;
+  inverse?: boolean;
+  danger?: boolean;
+  children: ReactNode;
+  to?: string;
+  exact?: boolean;
+  type: 'button' | 'submit' | 'reset' | undefined;
+  onClick?: () => void;
+  disabled?: boolean;
+};

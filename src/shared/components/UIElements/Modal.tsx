@@ -5,19 +5,6 @@ import { CSSTransition } from 'react-transition-group';
 import Backdrop from '../UIElements/Backdrop';
 import './Modal.css';
 
-type Props = {
-  className?: string;
-  header: string;
-  headerClass?: string;
-  onSubmit?: () => void;
-  contentClass: string;
-  children: ReactNode;
-  footerClass: string;
-  onCancel: () => void;
-  show: boolean;
-  footer: ReactNode;
-};
-
 const ModalOverlay = (props: Props) => {
   const content = (
     <div className={`modal ${props.className}`}>
@@ -44,3 +31,16 @@ export default function Modal(props: Props) {
     </>
   );
 }
+
+type Props = {
+  className?: string;
+  header: string;
+  headerClass?: string;
+  onSubmit?: () => void;
+  contentClass: string;
+  children: ReactNode;
+  footerClass: string;
+  onCancel: () => void;
+  show: boolean;
+  footer: ReactNode;
+};
