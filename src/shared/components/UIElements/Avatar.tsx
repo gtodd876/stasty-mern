@@ -2,14 +2,7 @@ import React from 'react';
 
 import './Avatar.css';
 
-type Props = {
-  className?: string;
-  image: string;
-  altText: string;
-  width?: string;
-};
-
-function Avatar(props: Props) {
+export default function Avatar(props: Props) {
   const { className, image, altText, width } = props;
   return (
     <div className={`avatar ${className}`}>
@@ -18,4 +11,9 @@ function Avatar(props: Props) {
   );
 }
 
-export default Avatar;
+type Props = {
+  className?: string;
+  image: string;
+  altText: string;
+  width?: string;
+};

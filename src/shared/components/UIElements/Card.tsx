@@ -1,12 +1,6 @@
 import React, { ReactNode } from 'react';
 import './Card.css';
 
-type Props = {
-  className?: string;
-  children: ReactNode;
-  style?: React.CSSProperties;
-};
-
 export default function Card(props: Props) {
   const { className, style, children } = props;
 
@@ -16,3 +10,9 @@ export default function Card(props: Props) {
     </div>
   );
 }
+
+type Props = {
+  className?: string;
+  children: ReactNode;
+  style?: React.CSSProperties;
+};
