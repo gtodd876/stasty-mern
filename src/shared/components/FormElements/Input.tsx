@@ -18,8 +18,8 @@ export default function Input(props: Props) {
 
   const [isTouched, setIsTouched] = React.useState(false);
   const [inputState, dispatch] = React.useReducer(inputReducer, {
-    value: '',
-    isValid: false,
+    value: props.value || '',
+    isValid: props.valid || false,
   });
 
   const { value, isValid } = inputState;
@@ -103,6 +103,8 @@ type Props = {
   errorText: string;
   validators: ValidatorType[];
   onInput: (id: string, value: string, isValid: boolean) => void;
+  value?: string;
+  valid?: boolean;
 };
 
 type ActionType = {

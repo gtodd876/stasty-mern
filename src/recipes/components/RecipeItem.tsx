@@ -40,10 +40,14 @@ export default function RecipeItem(props: Props) {
             <p>{description}</p>
           </div>
           <div className="recipe-item__actions">
-            <Button type="button" onClick={() => setShowImageModal(true)} inverse>
+            <Button
+              type="button"
+              onClick={() => setShowImageModal(true)}
+              inverse
+            >
               VIEW IMAGE
             </Button>
-            <Button type="button" to={`/places/${props.id}`}>
+            <Button type="button" to={`/recipes/${props.id}`}>
               EDIT
             </Button>
             <Button type="button" danger>
