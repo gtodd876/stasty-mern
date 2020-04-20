@@ -11,9 +11,17 @@ const ModalOverlay = (props: Props) => {
       <header className={`modal_header ${props.headerClass}`}>
         <h2>{props.header}</h2>
       </header>
-      <form onSubmit={props.onSubmit ? props.onSubmit : event => event.preventDefault()}>
-        <div className={`modal__content ${props.contentClass}`}>{props.children}</div>
-        <footer className={`modal__footer ${props.footerClass}`}>{props.footer}</footer>
+      <form
+        onSubmit={
+          props.onSubmit ? props.onSubmit : event => event.preventDefault()
+        }
+      >
+        <div className={`modal__content ${props.contentClass}`}>
+          {props.children}
+        </div>
+        <footer className={`modal__footer ${props.footerClass}`}>
+          {props.footer}
+        </footer>
       </form>
     </div>
   );
@@ -25,7 +33,13 @@ export default function Modal(props: Props) {
   return (
     <>
       {props.show && <Backdrop onClick={props.onCancel} />}
-      <CSSTransition in={props.show} mountOnEnter unmountOnExit timeout={200} classNames="modal">
+      <CSSTransition
+        in={props.show}
+        mountOnEnter
+        unmountOnExit
+        timeout={200}
+        classNames="modal"
+      >
         <ModalOverlay {...props} />
       </CSSTransition>
     </>
@@ -37,7 +51,7 @@ type Props = {
   header: string;
   headerClass?: string;
   onSubmit?: () => void;
-  contentClass: string;
+  contentClass?: string;
   children: ReactNode;
   footerClass: string;
   onCancel: () => void;

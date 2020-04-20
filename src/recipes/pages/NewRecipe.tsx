@@ -6,7 +6,7 @@ import {
   VALIDATOR_REQUIRE,
   VALIDATOR_MINLENGTH,
 } from '../../shared/util/validators';
-import './NewRecipe.css';
+import './RecipeForm.css';
 
 export default function NewRecipe() {
   const [formState, dispatch] = React.useReducer(formReducer, initialState);
@@ -82,6 +82,7 @@ const formReducer = (state: StateType, action: ActionType) => {
 };
 
 const initialState = {
+  // keys need to be same as id's of the inputs
   inputs: {
     title: {
       value: '',
