@@ -2,8 +2,9 @@ import React from 'react';
 
 import RecipeItem from './RecipeItem';
 import { Recipe } from '../../types';
-import './RecipeList.css';
+import Button from '../../shared/components/FormElements/Button';
 import Card from '../../shared/components/UIElements/Card';
+import './RecipeList.css';
 
 type Props = {
   items: Recipe[];
@@ -15,7 +16,9 @@ export default function RecipeList(props: Props) {
       <div className="recipe-list center">
         <Card>
           <h2>No recipes found. Maybe create one?</h2>
-          <button>Share recipe</button>
+          <Button to="/recipes/new" type="button">
+            Share recipe
+          </Button>
         </Card>
       </div>
     );

@@ -15,4 +15,5 @@ export type User = {
 
 export interface RouteParams {
   userId: string;
+  recipeId: string;
 }
